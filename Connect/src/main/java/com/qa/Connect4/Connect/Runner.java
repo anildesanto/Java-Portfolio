@@ -10,11 +10,7 @@ public class Runner {
 		Player ben = new Player("Ben",red);
 		
 		Board board = new Board(6,7,ani,ben);
-		board.initializeBoard();
-		board.addPieceToBoard(ben.getPieceType(),3);
-		board.addPieceToBoard(ben.getPieceType(),3);
-		board.addPieceToBoard(ben.getPieceType(),3);
-		board.addPieceToBoard(ben.getPieceType(),3);
+		board.intro();
 	}
 
 }

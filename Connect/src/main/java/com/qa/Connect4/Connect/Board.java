@@ -43,6 +43,7 @@ public class Board
 		int input = sc.nextInt();
 		addPieceToBoard(player.getPieceType(),input);
 		askForInput(player);
+		
 	}
 	public void computerPlay()
 	{
