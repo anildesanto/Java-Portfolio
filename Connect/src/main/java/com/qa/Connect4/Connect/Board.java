@@ -1,5 +1,6 @@
 package com.qa.Connect4.Connect;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -35,20 +36,30 @@ public class Board
 		Player player = new Player(name,chosen);
 		players[0] = player;
 		updatedBoard();
-		askForInput(player);
+			askForInput(player);
 	}
 	public void askForInput(Player player)
 	{
-		System.out.println("Choose from the " + my2dArray.length + " rows available");
-		int input = sc.nextInt();
-		addPieceToBoard(player.getPieceType(),input);
-		askForInput(player);
-		
+		try
+		{
+			System.out.println("Choose from the " + (my2dArray.length+1) + " rows available that are not full");
+			int input = 0;
+			input = sc.nextInt();
+			addPieceToBoard(player.getPieceType(),input);
+		}
+		catch(InputMismatchException e)
+		{
+			System.out.println("Invalid input, try again.");
+		}
+		finally
+		{
+			askForInput(player);
+		}
 	}
 	public void computerPlay()
 	{
 		Piece red = new Piece("red",0,0);
-		Player computer = new Player("Ben",red);
+		Player computer = new Player("Computer",red);
 		players[1] = computer;
 		int playerMove = rand.nextInt(my2dArray.length -1)+1;
 		addPieceToBoard(computer.getPieceType(),playerMove);
@@ -85,8 +96,8 @@ public class Board
 	{
 		row--;
 
-		if(row > my2dArray[0].length)
-			row = my2dArray.length-1;
+		if(row > my2dArray[0].length-1)
+			row = my2dArray.length;
 		if(row < 0)
 			row = 0;
 			
@@ -123,7 +134,6 @@ public class Board
 				checkPlayerPieces(i,j,playerWins);
 			}
 		}
-
 		resetPlayePiecesCount(playerWins);
 	}
 	public void resetPlayePiecesCount(int [] playerWins)
