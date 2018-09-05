@@ -8,7 +8,6 @@ public class Runner
 		System.out.println(pra.stringBackWards("abcdefg"));
 		System.out.println(pra.last4CharsMissing("fdwevfhbf"));
 		System.out.println(pra.getStringInMiddle("babalolbaba"));
-	
 	}
 
 }

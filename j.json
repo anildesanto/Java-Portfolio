@@ -1,0 +1,15 @@
+{
+    "employees":
+    [
+        {"name" : "Melvin", "age" : 25, "profession": "Trainee",
+            "skills" : ["None","Java"] },
+        {"name" : "Lucy", "age" : 22, "profession": "Trainee",
+            "skills" : ["Maths","Java"]},
+        {"name" : "Stephen", "age" : 24, "profession": "Trainee",
+            "skills" : ["Html","CSS"]},
+        {"name" : "Ani", "age" : 23, "profession": "Trainee",
+            "skills" : ["Eating a great amount of Chocolate","Lazying around"]},
+        {"name" : "Moe", "age" : 22, "profession": "Trainee",
+            "skills" : ["Teaching","Not dancing"]}
+    ]
+}
